@@ -9,25 +9,31 @@ new shell it will automatically `cd` into it.
 
 ## Install
 
-- manual installation 
+- manual installation in oh-my-zsh
+
+To manually install in oh-my-zsh you need to download and copu inside 
+`$ZSH_CUSTOM/plugins`
 
 ```zsh
-curl -L https://github.com/andreaconti/auto-cd > /path/to/auto-cd.zsh
-source /path/to/auto-cd.zsh
+git clone https://github.com/andreaconti/auto-cd $ZSH_CUSTOM/auto-cd
+```
+Then activate in your `.zshrc`.
+
+```zsh
+plugins=(auto-cd)
 ```
 
 - antigen
+
+Installing using antigen is quite simple:
 
 ```zsh
 antigen bundle andreaconti/auto-cd
 ```
 
-- zplugin
-
-```zsh
-zplugin load andreaconto/auto-cd
-```
-
 ## Options
 
-todo
+`auto-cd` provided few options:
+
+- AUTO_CD_HOME, the default folder into which to jump if there is no previous `cd`
+- AUTO_CD_NO_AUTO_LS, bool, if true disables auto-ls once entered in the new folder
